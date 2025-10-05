@@ -1,6 +1,6 @@
 """
 NASA Data Integration Module
-Integrates various NASA data sources for the Space Debris Analyzer
+Integrates various NASA data sources for the ORCA Demo Debris Analyzer
 """
 
 import requests
@@ -26,7 +26,7 @@ class NASADataIntegration:
         
         self.session = requests.Session()
         self.session.headers.update({
-            'User-Agent': 'Space Debris Analyzer - NASA Space Apps Challenge'
+            'User-Agent': 'ORCA Demo Debris Analyzer - NASA Space Apps Challenge'
         })
     
     def get_orbital_debris_data(self, data_type: str = 'current') -> Dict[str, Any]:
