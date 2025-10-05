@@ -113,8 +113,8 @@ def analyze_debris():
             'image_size': image.shape
         }
         
-        # Add image URL for visualization
-        analysis_result['image_url'] = f'http://localhost:5001/uploads/{unique_filename}'
+        # Add image URL for visualization - always use HTTPS for production
+        analysis_result['image_url'] = f'https://space-apps-backend.onrender.com/uploads/{unique_filename}'
         
         return jsonify(analysis_result)
         
@@ -512,7 +512,7 @@ def download_sample_image():
             return jsonify({
                 'success': True,
                 'image_path': image_path,
-                'image_url': f'http://localhost:5001/{image_path}',
+                'image_url': f'https://space-apps-backend.onrender.com/{image_path}',
                 'message': f'Selected {image_type} image for processing',
                 'timestamp': datetime.now().isoformat()
             })
